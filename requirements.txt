@@ -1,0 +1,7 @@
+tensorflow==2.21.0
+streamlit>=1.40.0
+numpy>=2.1,<3
+pandas>=2.2.0
+scikit-learn>=1.5.0
+matplotlib>=3.9.0
+Pillow>=10.0.0

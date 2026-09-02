@@ -1,0 +1,192 @@
+SUSTAINABILITY_DATA = {
+    "Aluminium": {
+        "icon": "🥫",
+        "display_name": "Aluminium",
+        "impact": "High",
+        "impact_score": 5,
+        "recyclability": "Very High",
+        "action": "Recycle",
+        "category": "Metal",
+        "description": "Aluminium is highly recyclable and can be recovered and reused repeatedly.",
+        "carbon": "Recycling aluminium generally requires substantially less energy than producing primary aluminium.",
+        "tips": [
+            "Empty the container before recycling.",
+            "Keep it reasonably clean.",
+            "Place it in your local metal recycling stream.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "Carton": {
+        "icon": "📦",
+        "display_name": "Carton",
+        "impact": "Medium",
+        "impact_score": 3,
+        "recyclability": "High",
+        "action": "Recycle",
+        "category": "Paper-based",
+        "description": "Many clean paper-based cartons can be recovered through appropriate recycling systems.",
+        "carbon": "Fibre recovery can reduce demand for virgin materials and associated resource use.",
+        "tips": [
+            "Empty the carton.",
+            "Follow your local recycling rules.",
+            "Avoid contaminating clean paper streams.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "E-waste": {
+        "icon": "💻",
+        "display_name": "E-waste",
+        "impact": "Very High",
+        "impact_score": 5,
+        "recyclability": "Specialized",
+        "action": "Use an e-waste collection point",
+        "category": "Electronic",
+        "description": "Electronic waste can contain valuable recoverable materials and components requiring controlled handling.",
+        "carbon": "Responsible recovery can conserve materials and reduce the need for some new material production.",
+        "tips": [
+            "Do not put electronics in general waste.",
+            "Use an authorized e-waste collection facility.",
+            "Remove personal data before disposal where appropriate.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "Glass": {
+        "icon": "🍾",
+        "display_name": "Glass",
+        "impact": "Medium",
+        "impact_score": 3,
+        "recyclability": "High",
+        "action": "Recycle",
+        "category": "Glass",
+        "description": "Glass containers can often be recycled into new glass products when accepted by local collection systems.",
+        "carbon": "Using recovered glass can reduce demand for virgin raw materials.",
+        "tips": [
+            "Empty containers.",
+            "Follow local glass collection rules.",
+            "Do not place non-container glass in container recycling.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "Organic_Waste": {
+        "icon": "🍎",
+        "display_name": "Organic Waste",
+        "impact": "Medium",
+        "impact_score": 3,
+        "recyclability": "Compostable",
+        "action": "Compost where available",
+        "category": "Organic",
+        "description": "Food and other suitable organic materials can often be treated through composting or biological processing.",
+        "carbon": "Appropriate biological treatment can help keep organic materials in useful resource cycles.",
+        "tips": [
+            "Separate food scraps where collection exists.",
+            "Compost suitable organic material.",
+            "Avoid mixing contaminated material with compost.",
+        ],
+        "sdgs": ["SDG 3", "SDG 6", "SDG 12", "SDG 13"],
+    },
+    "Paper_and_Cardboard": {
+        "icon": "📄",
+        "display_name": "Paper & Cardboard",
+        "impact": "Medium",
+        "impact_score": 3,
+        "recyclability": "High",
+        "action": "Recycle if clean and dry",
+        "category": "Paper",
+        "description": "Clean paper and cardboard can commonly be recovered through fibre recycling systems.",
+        "carbon": "Recycling fibre can reduce demand for virgin material and associated resource consumption.",
+        "tips": [
+            "Keep paper dry.",
+            "Flatten cardboard boxes.",
+            "Remove heavily contaminated sections.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "Plastics": {
+        "icon": "🧴",
+        "display_name": "Plastics",
+        "impact": "High",
+        "impact_score": 4,
+        "recyclability": "Material dependent",
+        "action": "Check local plastic recycling rules",
+        "category": "Plastic",
+        "description": "Plastic recyclability depends on polymer type and the recycling infrastructure available locally.",
+        "carbon": "Recovering suitable plastics can reduce demand for some virgin plastic production.",
+        "tips": [
+            "Check the resin/recycling symbol.",
+            "Follow your local collection rules.",
+            "Avoid contaminating recycling with unsuitable plastics.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13", "SDG 14", "SDG 15"],
+    },
+    "Textiles": {
+        "icon": "👕",
+        "display_name": "Textiles",
+        "impact": "High",
+        "impact_score": 4,
+        "recyclability": "Moderate",
+        "action": "Reuse, donate or use textile collection",
+        "category": "Textile",
+        "description": "Extending the useful life of clothing and textiles through reuse is often preferable to disposal.",
+        "carbon": "Reuse and recovery can reduce demand for new textile production and associated resource use.",
+        "tips": [
+            "Donate usable clothing.",
+            "Repair items before replacing them.",
+            "Use dedicated textile collection where available.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13"],
+    },
+    "Wood": {
+        "icon": "🪵",
+        "display_name": "Wood",
+        "impact": "Medium",
+        "impact_score": 3,
+        "recyclability": "Recoverable",
+        "action": "Reuse or send for wood recovery",
+        "category": "Wood",
+        "description": "Wood can potentially be reused, repaired, recovered or processed depending on its condition.",
+        "carbon": "Reuse and material recovery can reduce demand for new resources.",
+        "tips": [
+            "Reuse usable wood first.",
+            "Separate treated or contaminated wood where required.",
+            "Check local wood recovery services.",
+        ],
+        "sdgs": ["SDG 12", "SDG 13", "SDG 15"],
+    },
+}
+
+SDG_IMAGES = {
+    "SDG 3": "3.png",
+    "SDG 6": "6.jpg",
+    "SDG 7": "7.png",
+    "SDG 12": "12.png",
+    "SDG 13": "13.png",
+    "SDG 14": "14.png",
+    "SDG 15": "15.png",
+}
+
+
+def get_sustainability_data(waste_type):
+    data = SUSTAINABILITY_DATA.get(
+        waste_type,
+        {
+            "icon": "♻️",
+            "display_name": waste_type,
+            "impact": "Unknown",
+            "impact_score": 0,
+            "recyclability": "Check local rules",
+            "action": "Check local waste authority",
+            "category": "Unknown",
+            "description": "No sustainability profile available.",
+            "carbon": "No estimate available.",
+            "tips": [],
+            "sdgs": ["SDG 12"],
+        },
+    )
+
+    data = data.copy()
+    data["sdg_images"] = {
+        sdg: SDG_IMAGES.get(sdg)
+        for sdg in data["sdgs"]
+    }
+
+    return data
