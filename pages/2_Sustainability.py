@@ -27,8 +27,7 @@ st.html(
     <style>
 
     #MainMenu,
-    footer,
-    header {
+    footer {
         visibility: hidden;
     }
 
@@ -48,7 +47,14 @@ st.html(
     }
 
     [data-testid="stHeader"] {
-        background: transparent;
+        background: transparent !important;
+    }
+
+    /* Keep Streamlit's sidebar expand/collapse button visible */
+    [data-testid="stSidebarCollapsedControl"] {
+        visibility: visible !important;
+        display: flex !important;
+        z-index: 999999 !important;
     }
 
     [data-testid="stSidebar"] {
@@ -826,7 +832,7 @@ with c2:
             </div>
 
             <div class="info-text">
-                Indicates the potential for effective material recovery through proper waste management.               
+                Indicates the potential for effective material recovery through proper waste management.
             </div>
 
         </div>
