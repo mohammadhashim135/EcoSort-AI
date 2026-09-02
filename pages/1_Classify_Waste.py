@@ -34,8 +34,7 @@ st.html(
     <style>
 
     #MainMenu,
-    footer,
-    header {
+    footer {
         visibility: hidden;
     }
 
@@ -55,7 +54,14 @@ st.html(
     }
 
     [data-testid="stHeader"] {
-        background: transparent;
+        background: transparent !important;
+    }
+
+    /* Keep Streamlit's sidebar expand/collapse button visible */
+    [data-testid="stSidebarCollapsedControl"] {
+        visibility: visible !important;
+        display: flex !important;
+        z-index: 999999 !important;
     }
 
     .block-container {
@@ -229,6 +235,26 @@ st.html(
         border: 1px solid rgba(95, 154, 107, 0.12);
         color: #89a592;
         font-size: 0.78rem;
+        line-height: 1.8;
+    }
+
+    .image-info-row {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        min-height: 1.5rem;
+    }
+
+    .image-info-label {
+        color: #a9c9b1;
+        font-weight: 800;
+        min-width: 70px;
+    }
+
+    .image-info-value {
+        color: #89a592;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .result-card {
@@ -796,11 +822,37 @@ with left:
     st.html(
         f"""
         <div class="image-info">
-            📄 <b>File:</b> {html.escape(uploaded_file.name)}
-            &nbsp; · &nbsp;
-            📐 <b>Size:</b> {image.width} × {image.height}px
-            &nbsp; · &nbsp;
-            💾 <b>Format:</b> {html.escape(uploaded_file.type)}
+
+            <div class="image-info-row">
+                <div class="image-info-label">
+                    📄 File
+                </div>
+
+                <div class="image-info-value">
+                    {html.escape(uploaded_file.name)}
+                </div>
+            </div>
+
+            <div class="image-info-row">
+                <div class="image-info-label">
+                    📐 Size
+                </div>
+
+                <div class="image-info-value">
+                    {image.width} × {image.height}px
+                </div>
+            </div>
+
+            <div class="image-info-row">
+                <div class="image-info-label">
+                    💾 Format
+                </div>
+
+                <div class="image-info-value">
+                    {html.escape(uploaded_file.type)}
+                </div>
+            </div>
+
         </div>
         """
     )
