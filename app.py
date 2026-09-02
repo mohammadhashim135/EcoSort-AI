@@ -64,10 +64,6 @@ st.html(
         visibility: hidden;
     }
 
-    header {
-        visibility: hidden;
-    }
-
     [data-testid="stAppViewContainer"] {
         background:
             radial-gradient(
@@ -84,7 +80,14 @@ st.html(
     }
 
     [data-testid="stHeader"] {
-        background: transparent;
+        background: transparent !important;
+    }
+
+    /* Keep Streamlit's sidebar expand/collapse button visible */
+    [data-testid="stSidebarCollapsedControl"] {
+        visibility: visible !important;
+        display: flex !important;
+        z-index: 999999 !important;
     }
 
     .block-container {
@@ -797,6 +800,7 @@ st.html(
 
 m1, m2, m3, m4 = st.columns(4, gap="medium")
 
+
 performance = [
     (
         m1,
@@ -976,8 +980,16 @@ st.html(
 st.html(
     """
     <div class="footer">
-        EcoSort AI · Computer Vision for Sustainable Waste Management 
-        <p>Developed by <a href="https://github.com/mohammadhashim135" target="_blank">Mohammad Hashim</a></p>
+        EcoSort AI · Computer Vision for Sustainable Waste Management
+        <p>
+            Developed by
+            <a
+                href="https://github.com/mohammadhashim135"
+                target="_blank"
+            >
+                Mohammad Hashim
+            </a>
+        </p>
     </div>
     """
 )
